@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+     <!--for angular-->
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>  
+     
+    <script src= "./app.js"></script>
+    <!--for bootstrap-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+  </head>
+  <body id="wrap" ng-app="myApp"  ng-controller="myc">
+    <div class="col-sm-8">
+        <form name="myForm">
+           <div class="myblock">
+                <p>Name*
+                    <div class ="inner-addon right-addon">
+                        <i class="glyphicon glyphicon-remove"></i>
+                        <input id="name" class="name" name="name" ng-model="name" required type="text">
+                    </div>
+                    <p  ng-style="{visibility : myvalidname }">
+                        Please inform your name
+                    </p>
+                    
+           </div>
+           <div class="myblock">
+                <p>Email*
+                        <div class ="inner-addon right-addon">
+                            <i class="glyphicon glyphicon-remove"></i>
+                            <input id="email" class="email" name="email" ng-model="email" type="email" required>
+                        </div>
+                        <p ng-style="{visibility: myvalidemail}">
+                            Please inform your email
+                        </p>
+                </p>
+           </div>
+            <div>
+                <span class= "col-sm-6 address1 addressblock">
+                    <p>Address 1*
+                            <div class ="inner-addon right-addon">
+                                <i class="glyphicon glyphicon-remove"></i>
+                                <input id="address1" name="address1" ng-model="address1" required>
+                            </div>
+                        <p ng-style="{visibility: myvalidaddress1}">
+                            Please inform your Address
+                        </p>
+                    </p>
+                </span>
+
+                <span class= "col-sm-3 addressblock">
+                    <p>Address 2
+                            <div>
+                                <input id="address2" class="adress2" name="Address2" ng-model="Address2">
+                            </div>
+                    </p>
+                </span>
+                
+                <span class= "col-sm-3 ozip addressblock">
+                    <p>Zip Code*
+                        <div class ="inner-addon right-addon">
+                            <i class="glyphicon glyphicon-remove"></i>
+                            <input type="text" id="zip" name="zip" class="zip" ng-model="zip" placeholder="" ng-pattern="/^([1-9])([0-9]){5}$/" maxlength="6" required>
+                           
+                        </div>
+                        <p  ng-style="{visibility: myvalidzip}">
+                            Please inform your Zip
+                        </p> 
+                    </p>
+                </span>
+            </div>
+
+
+            <div>
+                <span class= "col-sm-4 leftcity stateblock">
+                    <p>City*
+                        <div class ="inner-addon right-addon">
+                            <i class="glyphicon glyphicon-remove"></i>
+                            <input id="city" class="city" name="city" ng-model="city" required>
+                        </div>
+                    <p  ng-style="{visibility: myvalidcity}">Please inform your City</p>   
+                    
+                </p>
+                </span>
+            
+                <span class= "col-sm-4 stateblock">
+                    <p>State/Province/region*
+                        <div class ="inner-addon right-addon">
+                            <i class="glyphicon glyphicon-remove"></i>
+                            <input id="state" class="state" name="state" ng-model="state" required>
+                        </div>
+                    <p  ng-style="{visibility:myvalidstate}">
+                        Please inform your State
+                    </p>   
+                </p>
+                </span>
+                
+               
+                <span class= "col-sm-4 rightcountry stateblock inner-addon right-addon">
+                    <p>Country* 
+                        <div class="inner-addon right-addon">
+                            <i class="glyphicon glyphicon-remove"></i>
+                            <input id="country" class= "country" name="country" ng-model="country" required>
+                        </div>
+                        <p  ng-style="{visibility:myvalidcountry}">
+                            Please inform your Country
+                        </p>   
+                    </p>
+                </span>
+
+
+            </div>
+            <div id="downblock">
+                <button id="submit"  ng-click="submit()" class="btn btn-primary" type="submit">Submit</button>
+                <button id="reset" class="btn" type="reset">Reset</button>
+            </div>
+
+        </form>    
+   </div>
+    <div id="mybox" class="col-sm-4" style="background-color: gray;"></div>
+
+  </body>
+</html>
