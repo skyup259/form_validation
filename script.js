@@ -34,7 +34,6 @@ myapp.directive('ngCompare', function () {
  
 // create angular controller
 myapp.controller('mainController', function ($scope, $window, $element, $compile) {
-	$scope.generateid = 1;
 	 $scope.myboxelements=[];
 	 // function to submit the form after all validation has occurred 
 	 $scope.editbutton = function(id, myboxelements){
@@ -42,7 +41,7 @@ myapp.controller('mainController', function ($scope, $window, $element, $compile
 	}
 
 	$scope.deleteobj = function(id, myboxelements){
-		console.log("in");
+		//console.log(id);
 		 myboxelements.splice(id, 1);
 	}
 		 	
@@ -63,7 +62,7 @@ myapp.controller('mainController', function ($scope, $window, $element, $compile
 			divElement.append(htmlElement);
 			$compile(divElement)($scope);*/
 
-			$scope.generateid = $scope.generateid +1;
+		
 
 			var obj = {name: details.name, email: details.email, address1: details.address1, address2: details.address2, city: details.city, state: details.state, country: details.country, zip: details.zipcode };
 			myboxelements.push(obj);
