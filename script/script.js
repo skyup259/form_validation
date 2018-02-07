@@ -36,8 +36,12 @@ myapp.directive('ngCompare', function () {
 myapp.controller('mainController', function ($scope, $window, $element, $compile) {
 	 $scope.myboxelements=[];
 	 // function to submit the form after all validation has occurred 
-	 $scope.editbutton = function(id, myboxelements){
-		 	console.log(id);
+	 $scope.user={};
+	 $scope.reset = function(){
+	 	$scope.user={};
+	 }
+	 $scope.editbutton = function(id, details){
+	 		$scope.user = details;
 	}
 
 	$scope.deleteobj = function(id, myboxelements){
@@ -46,7 +50,7 @@ myapp.controller('mainController', function ($scope, $window, $element, $compile
 	}
 		 	
 
-	 $scope.datasubmitted = function (details,id, myboxelements) {
+	 $scope.datasubmitted = function (details) {
 	 	
 	 
 	 	// Set the 'submitted' flag to true
@@ -64,8 +68,8 @@ myapp.controller('mainController', function ($scope, $window, $element, $compile
 
 		
 
-			var obj = {name: details.name, email: details.email, address1: details.address1, address2: details.address2, city: details.city, state: details.state, country: details.country, zip: details.zipcode };
-			myboxelements.push(obj);
+			var obj = {name: details.name, email: details.email, address1: details.address1, address2: details.address2, city: details.city, state: details.state, country: details.country, zipcode: details.zipcode };
+			$scope.myboxelements.push(obj);
 
 	        // var div = document.createElement("div");
 	        // div.className = "jumbotron jumbotron-fluid";

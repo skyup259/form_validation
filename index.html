@@ -2,6 +2,7 @@
 <html>
 <head>
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <link href="style/style.css" rel="stylesheet" />
 		<link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
 	 	<link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
 	 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -9,67 +10,66 @@
 	<body ng-app="myapp" ng-controller="mainController">
 	 	<div class="col-md-12 col-sm-12 col-xs-12 form-group">
 	 		  
-	 		<div class="col-sm-3 col-md-9" id="rightbox">
+	 		<div class="col-sm-3 col-md-8" id="rightbox">
 	 
 			 <!-- FORM : YOU CAN DISABLE, HTML5 VALIDATION BY USING "novalidate" ATTRIBUTE-->
 			 <form name="userForm" ng-submit="submitForm()" novalidate>
 	 
 	 <!-- NAME -->
-				 <div style="margin-top:20px" class="col-sm-10 inner-addon right-addon" ng-class="{ 'has-error' : userForm.name.$invalid && (userForm.name.$dirty || submitted)}">
+				 <div style="margin-top:20px" class="col-md-12 col-sm-12 col-xs-12" ng-class="{ 'has-error' : userForm.name.$invalid && (userForm.name.$dirty || submitted)}">
 					 <label>Name *</label>
-					  <i class="glyphicon glyphicon-remove"></i>
 					 <input type="text" name="name" class="form-control" ng-model="user.name"  ng-required="true">
 					 <p ng-show="userForm.name.$error.required && (userForm.name.$dirty || submitted)" class="help-block">You name is required.</p>
 				 </div>
 	 
 	 <!-- EMAIL -->
-				 <div style="margin-top:20px" class="col-sm-10 " ng-class="{ 'has-error' : userForm.email.$invalid && (userForm.email.$dirty || submitted)}">
+				 <div style="margin-top:20px" class="col-md-12 col-sm-12 col-xs-12" ng-class="{ 'has-error' : userForm.email.$invalid && (userForm.email.$dirty || submitted)}">
 					 <label>Email *</label>
 					 <input type="email" name="email" class="form-control" ng-model="user.email" ng-required="true">
 					 <p ng-show="userForm.email.$error.required && (userForm.email.$dirty || submitted)" class="help-block">Email is required.</p>
 					 <p ng-show="userForm.email.$error.email && (userForm.email.$dirty || submitted)" class="help-block">please inform your email.</p>
 				 </div>
 				 
-				 <div style="margin-top:20px" class="col-sm-10 row">
+				 <div style="margin-top:20px" class="col-md-12 col-sm-12 col-xs-12 row">
 		  <!-- Address -->
-					 <div class="col-sm-6" size="30%" ng-class="{ 'has-error' : userForm.address1.$invalid && (userForm.address1.$dirty || submitted)}">
+					 <div class="col-md-6 col-sm-12 col-xs-12" size="30%" ng-class="{ 'has-error' : userForm.address1.$invalid && (userForm.address1.$dirty || submitted)}">
 						 <label>Address *</label>
 						 <input type="text" name="address1" id="address1" class="form-control" ng-model="user.address1" placeholder="" ng-required="true">
 						 <p ng-show="userForm.address1.$error.required && (userForm.address1.$dirty || submitted)" class="help-block">address is required.</p>
 					 </div>
 
 		 <!-- Address 2-->
-					 <div class="col-sm-3 " size="30%" ng-class="{ 'has-error' : userForm.address2.$invalid && (userForm.address2.$dirty || submitted)}">
+					 <div class="col-md-3 col-sm-12 col-xs-12 " size="30%" ng-class="{ 'has-error' : userForm.address2.$invalid && (userForm.address2.$dirty || submitted)}">
 						 <label>Address 2</label>
 						 <input type="text" name="address2" class="form-control" ng-model="user.address2" placeholder="">
 						 <p ng-show="userForm.address2.$error.required && (userForm.address2.$dirty || submitted)" class="help-block">address2 is required.</p>
 					 </div>
 
 		 <!-- zipcode -->
-					 <div class="col-sm-3 " ng-class="{ 'has-error' : userForm.zipcode.$invalid && (userForm.zipcode.$dirty || submitted) }">
+					 <div class="col-md-3 col-sm-12 col-xs-12 " ng-class="{ 'has-error' : userForm.zipcode.$invalid && (userForm.zipcode.$dirty || submitted) }">
 						 <label>Zip code*</label>
 						 <input type="text" id="zip" name="zipcode" class="form-control" ng-model="user.zipcode" ng-pattern="/^([1-9])([0-9]){5}$/" maxlength="6" ng-required="true">
 						 <p ng-show="userForm.zipcode.$error.pattern && (userForm.zipcode.$dirty || submitted)" class="help-block">Enter a valid zipcode.</p>
 					 </div>
 				</div>
 
-				<div style="margin-top:20px" class="col-sm-10  row">
+				<div style="margin-top:20px" class="col-md-12 col-sm-12 col-xs-12 row">
 		 <!-- CITY -->
-					 <div class="col-sm-4 " ng-class="{ 'has-error' : userForm.city.$invalid && (userForm.city.$dirty || submitted)}">
+					 <div class="col-md-4 col-sm-12 col-xs-12" ng-class="{ 'has-error' : userForm.city.$invalid && (userForm.city.$dirty || submitted)}">
 						 <label>City *</label>
 						 <input type="text" name="city" class="form-control" ng-model="user.city" placeholder="" ng-required="true">
 						 <p ng-show="userForm.city.$error.required && (userForm.city.$dirty || submitted)" class="help-block">city is required.</p>
 					 </div>
 
 		 <!-- state -->
-					 <div class="col-sm-4 " ng-class="{ 'has-error' : userForm.state.$invalid && (userForm.city.$dirty || submitted)}">
+					 <div class="col-md-4 col-sm-12 col-xs-12" ng-class="{ 'has-error' : userForm.state.$invalid && (userForm.city.$dirty || submitted)}">
 						 <label>State/ Province/ Region *</label>
 						 <input type="text" name="state" class="form-control" ng-model="user.state" placeholder="" ng-required="true">
 						 <p ng-show="userForm.state.$error.required && (userForm.state.$dirty || submitted)" class="help-block">state is required.</p>
 					 </div>
 					 
 		 <!-- COUNTRY -->
-					 <div class="col-sm-4 " size="30%" ng-class="{ 'has-error' : userForm.country.$invalid && (userForm.country.$dirty || submitted)}">
+					 <div class="col-md-4 col-sm-12 col-xs-12 " size="30%" ng-class="{ 'has-error' : userForm.country.$invalid && (userForm.country.$dirty || submitted)}">
 						 <label>Country *</label>
 						 <input type="text" name="country" class="form-control" ng-model="user.country" placeholder="" ng-required="true">
 						 <p ng-show="userForm.country.$error.required && (userForm.country.$dirty || submitted)" class="help-block">country is required.</p>
@@ -79,20 +79,20 @@
 	 <!-- ng-disabled FOR ENABLING AND DISABLING SUBMIT BUTTON -->
 	 <!--<button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Register</button>-->
 	 			<div style="margin-top:10px" class="col-sm-10 row">
-	 				<div class="col-sm-2 "> <button ng-click="datasubmitted(user,generateid,myboxelements)"type="submit" class="btn btn-primary">Submit</button> </div>
-	 				<div class="col-sm-2 "> <button  type="reset" class="btn">Reset</button> </div>
+	 				<div class="col-sm-2 "> <button ng-click="datasubmitted(user)" type="submit" class="btn btn-primary">Submit</button> </div>
+	 				<div class="col-sm-2 "> <button class="btn" ng-click="reset()">Reset</button> </div>
 	 			</div>
 	 		</form>
 	 	</div>
-	 			<div class="col-sm-3 col-md-3" id="leftbox" >
-	 			<div id="mybox" class="col-sm-3 col-md-12" style="background-color: gray;" ng-repeat="details in myboxelements">
-	 				<div style="border: 2px solid blue; margin-top: 20px">	
-	 					Hello: {{details.name}} 
-	 					<button ng-click="editbutton($index, myboxelements)">Edit</button>
-	 					<button ng-click="deleteobj($index , myboxelements)">Delete</button> <br/>
-	 					Email: {{details.email}} <br/>
-	 					Adress: {{details.address1}} {{details.address2}} {{details.city}} {{details.state}} {{details.country}} {{details.zip}}
-
+	 			<div class="col-sm-12 col-md-4" id="leftbox" >
+	 			<div id="mybox" class="col-sm-3 col-md-12" ng-repeat="details in myboxelements">
+	 				<div class="name">	
+	 					{{details.name}}
+	 				</div>
+	 				<div class="label">Email</div> : <div class="phone">{{details.email}}</div> <br/>
+	 					<div class="label"> Address </div> <div class="phone">{{details.address1}} {{details.address2}} {{details.city}} {{details.state}} {{details.country}} {{details.zipcode}} </div>
+	 					<img src="icon/edit.png" class="edit" ng-click="editbutton($index, details)">
+	 					<img src="icon/delete.png" class="delete" ng-click="deleteobj($index , myboxelements)">
 	 				</div>
 	 			</div>
 	 </div>	
@@ -106,7 +106,7 @@
 
 	    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	    <script src="bootstrap/js/bootstrap.min.js"></script>
-	    <script src="script.js"></script>
+	    <script src="script/script.js"></script>
 	    
 	</body>
 </html>
