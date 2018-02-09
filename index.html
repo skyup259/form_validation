@@ -10,7 +10,7 @@
 	<body ng-app="myapp" ng-controller="mainController">
 	 	<div class="col-md-12 col-sm-12 col-xs-12 form-group">
 	 		  
-	 		<div class="col-sm-3 col-md-8" id="rightbox">
+	 		<div class="col-sm-12 col-md-8">
 	 
 			 <!-- FORM : YOU CAN DISABLE, HTML5 VALIDATION BY USING "novalidate" ATTRIBUTE-->
 			 <form name="userForm" ng-submit="submitForm()" novalidate>
@@ -32,21 +32,21 @@
 				 
 				 <div style="margin-top:20px" class="col-md-12 col-sm-12 col-xs-12 row">
 		  <!-- Address -->
-					 <div class="col-md-6 col-sm-12 col-xs-12" size="30%" ng-class="{ 'has-error' : userForm.address1.$invalid && (userForm.address1.$dirty || submitted)}">
+					 <div class="col-md-6 col-sm-12 col-xs-12" ng-class="{ 'has-error' : userForm.address1.$invalid && (userForm.address1.$dirty || submitted)}">
 						 <label>Address *</label>
 						 <input type="text" name="address1" id="address1" class="form-control" ng-model="user.address1" placeholder="" ng-required="true">
 						 <p ng-show="userForm.address1.$error.required && (userForm.address1.$dirty || submitted)" class="help-block">address is required.</p>
 					 </div>
 
 		 <!-- Address 2-->
-					 <div class="col-md-3 col-sm-12 col-xs-12 " size="30%" ng-class="{ 'has-error' : userForm.address2.$invalid && (userForm.address2.$dirty || submitted)}">
+					 <div class="col-md-3 col-sm-12 col-xs-12 " ng-class="{ 'has-error' : userForm.address2.$invalid && (userForm.address2.$dirty || submitted)}">
 						 <label>Address 2</label>
 						 <input type="text" name="address2" class="form-control" ng-model="user.address2" placeholder="">
 						 <p ng-show="userForm.address2.$error.required && (userForm.address2.$dirty || submitted)" class="help-block">address2 is required.</p>
 					 </div>
 
 		 <!-- zipcode -->
-					 <div class="col-md-3 col-sm-12 col-xs-12 " ng-class="{ 'has-error' : userForm.zipcode.$invalid && (userForm.zipcode.$dirty || submitted) }">
+					 <div class="col-md-3 col-sm-12 col-xs-12" ng-class="{ 'has-error' : userForm.zipcode.$invalid && (userForm.zipcode.$dirty || submitted) }">
 						 <label>Zip code*</label>
 						 <input type="text" id="zip" name="zipcode" class="form-control" ng-model="user.zipcode" ng-pattern="/^([1-9])([0-9]){5}$/" maxlength="6" ng-required="true">
 						 <p ng-show="userForm.zipcode.$error.pattern && (userForm.zipcode.$dirty || submitted)" class="help-block">Enter a valid zipcode.</p>
@@ -78,14 +78,14 @@
 	 
 	 <!-- ng-disabled FOR ENABLING AND DISABLING SUBMIT BUTTON -->
 	 <!--<button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Register</button>-->
-	 			<div style="margin-top:10px" class="col-sm-10 row">
-	 				<div class="col-sm-2 "> <button ng-click="datasubmitted(user)" type="submit" class="btn btn-primary">Submit</button> </div>
-	 				<div class="col-sm-2 "> <button class="btn" ng-click="reset()">Reset</button> </div>
+	 			<div style="margin-top:10px" class="col-md-12 col-sm-12 col-xs-12 row">
+	 				<div class="col-md-2 col-sm-6 col-xs-6"> <button ng-click="datasubmitted(user)" type="submit" class="btn btn-primary">Submit</button> </div>
+	 				<div class="col-md-2 col-sm-6 col-xs-6"> <button class="btn" ng-click="reset()">Reset</button> </div>
 	 			</div>
 	 		</form>
 	 	</div>
-	 			<div class="col-sm-12 col-md-4" id="leftbox" >
-	 			<div id="mybox" class="col-sm-3 col-md-12" ng-repeat="details in myboxelements">
+	 			<div class="col-sm-12 col-md-4 col-xs-12" id="leftbox" >
+	 			<div id="mybox" class="col-sm-12 col-md-12 col-xs-12" ng-repeat="details in myboxelements">
 	 				<div class="name">	
 	 					{{details.name}}
 	 				</div>
